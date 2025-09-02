@@ -20,7 +20,8 @@ practice-problems
 |
 │   ├── Attendence.java
 │   ├── Double_linked_list.cpp
-    ├── README.md
+│   ├── Binary Search Tree.cpp
+|── README.md
 ```
 
 - All Java problems are located in the `src/` directory.
@@ -32,7 +33,9 @@ practice-problems
 
 | File Name            | Problem Description                |
 |----------------------|------------------------------------|
-| `Inheritence.java`   | Explains inheritence               |
+| `Attendence.java`    | Marks attendence                   |
+| `Binary Search Tree` | Impliment BSD                      |
+| `Double_Linked_list` | Impliment double list              |
 | `readme.md`          | Description for the repoitory      |
 | `...`                | UPCOMING !                         |
 
@@ -43,11 +46,11 @@ practice-problems
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/practice-problems.git
+    git clone https://github.com/your-username/Practice-Files.git
     ```
 2. **Navigate to the source directory:**
     ```bash
-    cd practice-problems/src
+    cd Practice-Files/src
     ```
 3. **Compile and run any problem:**
     ```bash
