@@ -1,15 +1,15 @@
-# Java Practice Problems Repository
+# Practice Problems Repository
 
-Welcome to the **Java Practice Problems Repository** !  
-This repository is dedicated to helping mysellf and other basic developers to improve our Java skills through a variety of coding challenges, exercises, and sample solutions.
+Welcome to the **Practice Problems Repository** !  
+This repository is dedicated to helping mysellf and other basic developers to improve our Logical thinking skills through a variety of coding challenges, exercises, and sample solutions.
 
 ---
 
 ## 📚 About
 
-- **Purpose:** Provide a centralized hub for Java practice problems, from beginner to advanced level.
+- **Purpose:** Provide a centralized hub for practice problems, from beginner to advanced level.
 - **Contents:** Includes a range of problems covering topics such as algorithms, data structures, object-oriented programming, and more.
-- **Audience:** Students, self-learners, interviewees, or anyone looking to sharpen their Java coding skills.
+- **Audience:** Students, self-learners, interviewees, or anyone looking to sharpen their Java, C++ coding skills.
 
 ---
 
@@ -21,6 +21,7 @@ practice-problems
 │   ├── Attendence.java
 │   ├── Double_linked_list.cpp
 │   ├── Binary Search Tree.cpp
+│   ├── Linked_list.cpp
 |── README.md
 ```
 
@@ -36,6 +37,7 @@ practice-problems
 | `Attendence.java`    | Marks attendence                   |
 | `Binary Search Tree` | Impliment BSD                      |
 | `Double_Linked_list` | Impliment double list              |
+| `Linked_list`        | Impliment single list              |
 | `readme.md`          | Description for the repoitory      |
 | `...`                | UPCOMING !                         |
 
@@ -46,7 +48,7 @@ practice-problems
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/Practice-Files.git
+    git clone https://github.com/BarathiShankar/Practice-Files.git
     ```
 2. **Navigate to the source directory:**
     ```bash
@@ -75,4 +77,4 @@ For questions or suggestions, open an issue or reach out to me ( email - barathi
 
 ---
 
-<p align="center"><b>Just Keep in Mind "EVERY NERD WAS ONCE A BEGGINER !" ☕</b></p>
+<p align="center"><b>"Just Keep in Mind "EVERY NERD WAS ONCE A BEGGINER !" ☕</b></p>
