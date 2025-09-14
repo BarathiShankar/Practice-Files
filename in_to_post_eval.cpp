@@ -45,8 +45,27 @@ string intopost(const string& in)//Convert infix to postfix
         return post;
 }
 void posteval(const string& post)//Evaluating the postfix expression
-{       double ans;
-        //cout<<ans;
+{   stack<double> s;
+    for (char c : post) 
+    {
+        if (isdigit(c)) 
+        {
+            s.push(c - '0'); // convert char digit to int
+        } 
+        else
+        {
+            double b = s.top(); s.pop();
+            double a = s.top(); s.pop();
+            switch (c) 
+            {
+                case '+': s.push(a + b); break;
+                case '-': s.push(a - b); break;
+                case '*': s.push(a * b); break;
+                case '/': s.push(a / b); break;
+            }
+        }
+    }
+    cout << "Evaluated result : " << s.top() << endl;
 }
 int main()
 {
@@ -58,4 +77,4 @@ int main()
         posteval(post);
         return 0;
 }
-//Pending to perform postfix evaluation
+//Completed
