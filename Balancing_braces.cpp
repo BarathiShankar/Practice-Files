@@ -17,11 +17,9 @@ bool balance(string s)
                         else
                         {
                                 t = st.top();
-                                if((c=='(' && t!=')') || (c=='[' && t!=']') && (c=='{' && t!='}'))
+                                st.pop();
+                                if((c=='(' && t!=')') || (c=='[' && t!=']') || (c=='{' && t!='}'))
                                         return false;
-                                else
-                                        st.pop();
-
                         }
                 }
         }
