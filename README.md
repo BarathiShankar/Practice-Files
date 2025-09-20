@@ -22,6 +22,10 @@ practice-problems
 │   ├── Double_linked_list.cpp
 │   ├── Binary Search Tree.cpp
 │   ├── Linked_list.cpp
+│   ├── Balancing_braces.cpp
+│   ├── Calc_exceptions.java
+│   ├── MaxHeap.cpp
+│   ├── int_to_post_eval.cpp
 |── README.md
 ```
 
