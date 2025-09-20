@@ -28,8 +28,30 @@ void del()
 void heapify()
 {
 }
+node* inorder(node* n)
+{
+}
+node* postoder(node* n)
+{
+}
+node* preorder(node* n)
+{
+}
 void print()
 {
+        int o;
+        cout<<"Enter the type of traveral -\n1. Preorder\n2.Inorder\n3.Postorder\n Enter here : ";
+        cin>>o;
+        switch(o)
+                {
+                        case 1 : preorder();
+                        break;
+                        case 2 : inorder();
+                        break;
+                        case3 : postorder();
+                        break;
+                        default : cout<<"Invalid entry,exited from traverals\n";
+                }
 }
 int main()
 {
