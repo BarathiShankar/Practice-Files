@@ -1,57 +1,81 @@
-//Program to create a maxheap using linked list
+//Program to create a maxheap using vector method
 #include<iostream>
+#include<vector>
 using namespace std;
-struct node
+vector<int> heap;
+void bubbleup(int index)//To heapify the child to correct position
 {
-        int data;
-        node* next;
-};
-node* root=nullptr;
-void heapify();
+        int size=heap.size();
+        while(index > 0)
+        {
+                int par=(index-1)/2;
+                if(heap[index]>heap[par])
+                {
+                        swap(heap[index],heap[par]);
+                        index=par;
+                }
+                else
+                        break;
+        }
+}
+void bubbledown(int index)//To heapify the deleted hole of parent after deletion
+{
+        int size=heap.size();
+        while(index < size)
+        {
+                int left=(index*2)+1;
+                int right=(index*2)+2;
+                int largest=index;
+                if(left<size && heap[left]>heap[largest])
+                {
+                        largest=left;
+                }
+                if(right<size && heap[right]>heap[largest])
+                {
+                        largest=right;
+                }
+                if(index!=largest)
+                {
+                        swap(heap[index],heap[largest]);
+                                index=largest;
+                }
+                else
+                {
+                        return;
+                }
+        }
+}
 void insert()
 {
-        int d;
+        int v;
         cout<<"Enter the value to be inserted : ";
-        cin>>d;
-        if(root==nullptr)
-                root->data=d;
-        else
-        {
-                node* newnode=nullptr;
-
-        }
-        heapify();
+        cin>>v;
+        heap.push_back(v);
+        bubbleup(heap.size()-1);
 }
 void del()
 {
-}
-void heapify()
-{
-}
-node* inorder(node* n)
-{
-}
-node* postoder(node* n)
-{
-}
-node* preorder(node* n)
-{
+        if(heap.empty())
+        {
+                cout<<"Heap is empty, Unable to delete\n";
+                return;
+        }
+        int del=heap[0];
+        heap[0]=heap.back();
+        heap.pop_back();
+        bubbledown(0);
+        cout<<"Deleted value : "<<del<<endl;
 }
 void print()
 {
-        int o;
-        cout<<"Enter the type of traveral -\n1. Preorder\n2.Inorder\n3.Postorder\n Enter here : ";
-        cin>>o;
-        switch(o)
-                {
-                        case 1 : preorder();
-                        break;
-                        case 2 : inorder();
-                        break;
-                        case3 : postorder();
-                        break;
-                        default : cout<<"Invalid entry,exited from traverals\n";
-                }
+        if(heap.empty())
+        {
+                cout<<"Heap is empty\n";
+                return;
+        }
+        for(int i:heap)
+        cout<< i <<"\t";
+        cout<<endl;
 }
 int main()
 {
@@ -64,7 +88,7 @@ int main()
         {
                 case 0 : cout<<"Program terminated\n";
                          exit(0);
-                case 1 : insert()
+                case 1 : insert();
                          break;
                 case 2: del();
                         break;
@@ -74,4 +98,3 @@ int main()
         }
         }
 }
-//UNDER DEVELOPMENT
