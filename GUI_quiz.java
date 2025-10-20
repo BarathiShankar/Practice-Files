@@ -1,4 +1,5 @@
 //First program to create a GUI integrated Java program
+//Program to create an interactive panel based Quiz
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -66,7 +67,7 @@ class web extends JFrame implements ActionListener
  setVisible(true);
  }
 }
-public class main
+public class GUI_quiz
 {
  public static void main(String[] args)
  {
