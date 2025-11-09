@@ -1,62 +1,101 @@
-//Program to impliment quick,merge and binary sort for the array elements provided
-#include<iostream>
-#include<vector>
+//Program to deploy a fully functioning sorting algorithm using - Insertion, Merge and quick sort
+#include <iostream>
+#include <vector>
 using namespace std;
 int ar[10];
-void read()
-{
-        cout<"Enter the array elements \n";
-        int v=0;
-        for(int i=0;i<10;i++)
-        {
-                cout<<"Element "<<i+1<<" : ";
-                cin>>v;
-                ar[i]=v;
+void read() {
+    cout << "Enter the array elements\n";
+    int v = 0;
+    for (int i = 0; i < 10; i++) {
+        cout << "Element " << i + 1 << " : ";
+        cin >> v;
+        ar[i] = v;
+    }
+}
+void print(int arr[], int size) {
+    cout << "Sorted array : ";
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << "\t";
+    cout << endl;
+}
+void insertionSort() {
+    read();
+    int n = 10;
+    for (int i = 1; i < n; i++) {
+        int key = ar[i];
+        int j = i - 1;
+        while (j >= 0 && ar[j] > key) {
+            ar[j + 1] = ar[j];
+            j--;
         }
+        ar[j + 1] = key;
+    }
+    print(ar, n);
 }
-void print(vector<int> sort[])
-{
-        cout<<"Sorted array : ";
-        for(int i:sort)
-        {
-                cout<<i<<"\t";
+void mergeArr(int arr[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    vector<int> L(n1), R(n2);
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        mergeArr(arr, l, m, r);
+    }
+}
+void merge() {
+    read();
+    mergeSort(ar, 0, 9);
+    print(ar, 10);
+}
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high], i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
         }
-        cout<<endl;
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
 }
-void binary()
-{
-        read();
-        print(sort[]);
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
 }
-void merge()
-{
-        read();
-        print(sort[]);
+void quick() {
+    read();
+    quickSort(ar, 0, 9);
+    print(ar, 10);
 }
-void quick()
-{
-        read();
-        print(sort[]);
-}
-int main()
-{
-        int o;
-        while(1)
-        {
-                cout<<"\n\nMain Menu -\n0.Exit Program\n1.Binary Sort\n2.Merge Sort\n3.Quick sort\nEnter your choice : ";
-                cin>>o;
-                switch(o)
-                {
-                        case 0 : cout<<"Program Terminated\n";
-                                 return 0;
-                        case 1 : binary();
-                                 break;
-                        case 2 : merge();
-                                 break;
-                        case 3 : quick();
-                                 break;
-                        default : cout<<"Invalid entry, try again\n";
-                }
+int main() {
+    int o;
+    while (1) {
+        cout << "\n\nMain Menu -\n0.Exit Program\n1.Insertion Sort\n2.Merge Sort\n3.Quick sort\nEnter your choice : ";
+        cin >> o;
+        switch (o) {
+            case 0: cout << "Program Terminated\n"; return 0;
+            case 1: insertionSort(); break;
+            case 2: merge(); break;
+            case 3: quick(); break;
+            default: cout << "Invalid entry, try again\n";
         }
+    }
 }
-//UNDER DEVELOPMENT
+//COMPLETED
