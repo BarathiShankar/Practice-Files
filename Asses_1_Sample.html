@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Hai</title>
+        
+    </head>
+    <body>
+        <div class="inputs">
+    <input type="text" id="nameInput" placeholder="Recipient Name">
+    <textarea id="msgInput" placeholder="Your Message"></textarea>
+    <input type="color" id="colorPicker">
+    <button id="genBtn">Generate Card</button>
+    <script>
+            document.getElementById('genBtn').addEventListener('click', function() {
+    // 1. Selection and Getting Input Values
+    const nameValue = document.getElementById('nameInput').value;
+    const msgValue = document.getElementById('msgInput').value;
+    const themeColor = document.getElementById('colorPicker').value;
+
+    // 2. Selecting Display Elements
+    const card = document.getElementById('cardDisplay');
+    const nameDisplay = document.getElementById('displayName');
+    const msgDisplay = document.getElementById('displayMsg');
+
+    // 3. Displaying Content
+    nameDisplay.textContent = `To: ${nameValue}`;
+    msgDisplay.textContent = msgValue;
+
+    // 4. Style Manipulation (Border and Background)
+    card.style.borderColor = themeColor;
+    card.style.backgroundColor = themeColor + "33"; // Adding transparency
+
+    // 5. Updating Attribute (data-theme)
+    card.setAttribute('data-theme', 'custom');
+});
+        </script>
+</div>
+
+<div id="cardDisplay" data-theme="light" style="padding: 20px; border: 2px solid #000;">
+    <h2 id="displayName"></h2>
+    <p id="displayMsg"></p>
+</div>
+    </body>
+</html>
